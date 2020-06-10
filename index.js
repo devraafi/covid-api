@@ -1,7 +1,7 @@
 const app = require('express')();
 const covid = require('covid-data');
 
-app.use('', (req, res) => {
+app.use('/', (req, res) => {
     res.send('Server active');
 });
 
