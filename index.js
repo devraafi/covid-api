@@ -3,8 +3,10 @@ const covid = require('covid-data');
 const PORT = process.env.PORT || 4000;
 
 
-app.use('/', (req, res) => {
-    res.send('Server active');
+app.use('/check', (req, res) => {
+    res.send(
+        '<strong> s e r v e r  -  a c t i v e </strong>'
+    )
 });
 
 app.use('/id', async (req, res) => {
