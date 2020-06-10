@@ -1,5 +1,7 @@
 const app = require('express')();
 const covid = require('covid-data');
+const PORT = process.env.PORT || 4000;
+
 
 app.use('/', (req, res) => {
     res.send('Server active');
@@ -15,6 +17,6 @@ app.use('/global', async (req, res) => {
     res.json(covidData.global);
 })
 
-app.listen(8080, (e) => {
-    console.log('Server running:8080');
+app.listen(PORT, (e) => {
+    console.log(`Server running:${PORT}`);
 });
