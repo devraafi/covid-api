@@ -1,6 +1,10 @@
 const app = require('express')();
 const covid = require('covid-data');
 
+app.use('', (req, res) => {
+    res.send('Server active');
+});
+
 app.use('/id', async (req, res) => {
     const covidData = await covid.getData();
     res.json(covidData.id);
