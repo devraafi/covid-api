@@ -1,6 +1,7 @@
 const app = require('express')();
 const covid = require('covid-data');
 const PORT = process.env.PORT || 4000;
+const cors = require('cors');
 
 
 app.use('/check', (req, res) => {
@@ -9,12 +10,12 @@ app.use('/check', (req, res) => {
     )
 });
 
-app.use('/id', async (req, res) => {
+app.use('/id', cors(), async (req, res) => {
     const covidData = await covid.getData();
     res.json(covidData.id);
 });
 
-app.use('/global', async (req, res) => {
+app.use('/global', cors(), async (req, res) => {
     const covidData = await covid.getData();
     res.json(covidData.global);
 })
